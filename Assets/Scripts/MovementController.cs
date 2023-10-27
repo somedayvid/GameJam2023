@@ -15,6 +15,8 @@ public class MovementController : MonoBehaviour
     [SerializeField]
     float speed = 0;
 
+    [SerializeField]
+    Vector2 rectSize = new Vector2(.7f, 1.3f);
 
     /// <summary>
     /// Direction Property for Controller to change direction
@@ -107,5 +109,12 @@ public class MovementController : MonoBehaviour
         {
             speed = 6;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        
+        Gizmos.DrawWireCube(transform.position, rectSize);
     }
 }
