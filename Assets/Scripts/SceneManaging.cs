@@ -15,7 +15,10 @@ public class SceneManaging : MonoBehaviour
     }
     public void GameOver()
     {
+        //if (player.dead = true)
+        //{
         SceneManager.LoadScene("GameOver");
+        //}
     }
     public void GoHome()
     {
