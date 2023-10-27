@@ -9,7 +9,7 @@ public class SceneManaging : MonoBehaviour
     {
         SceneManager.LoadScene("Instructions");
     }
-    public void StartgGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Main");
     }
