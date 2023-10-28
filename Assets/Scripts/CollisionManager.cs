@@ -97,8 +97,6 @@ public class CollisionManager : MonoBehaviour
 
                 }
             }
-
-
         }
 
         foreach (GameObject enemy in enemies)
@@ -116,7 +114,6 @@ public class CollisionManager : MonoBehaviour
             }
         }
     }
-    
 
     public bool CheckCollision(SpriteInfo player, SpriteInfo enemy)
     {
