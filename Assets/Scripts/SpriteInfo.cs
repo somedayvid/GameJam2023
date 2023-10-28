@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class SpriteInfo : MonoBehaviour
 {
+    // Variable field
     [SerializeField] new SpriteRenderer renderer;
     [SerializeField] Vector2 rectSize;
 
+    /// <summary>
+    /// Get property for minimum x and y values of the sprite
+    /// </summary>
     public Vector2 RectMin
     {
         get
@@ -17,6 +21,9 @@ public class SpriteInfo : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get property for maximum x and y values of the sprite
+    /// </summary>
     public Vector2 RectMax
     {
         get
@@ -27,15 +34,10 @@ public class SpriteInfo : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update
     private void Start()
     {
         rectSize = new Vector2(renderer.bounds.size.x, renderer.bounds.size.y);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     /// <summary>
