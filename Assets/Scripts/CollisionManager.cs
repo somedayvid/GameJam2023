@@ -52,6 +52,7 @@ public class CollisionManager : MonoBehaviour
             }
         }
 
+        TagCollision();
         if(healthManagement.isDead)
         {
             ResetGame();
@@ -60,7 +61,7 @@ public class CollisionManager : MonoBehaviour
         //TagCollision();
     }
 
-    /*
+    
     public void TagCollision()
     {
         GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
