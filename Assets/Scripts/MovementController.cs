@@ -19,9 +19,7 @@ public class MovementController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     public Vector2 moveInput;
-    private Rigidbody2D rb;
     private Animator animator;
-    private bool didMove;
 
     // Start is called before the first frame update
     void Start()
