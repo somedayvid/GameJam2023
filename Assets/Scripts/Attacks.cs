@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AOEExplosion : MonoBehaviour
+public class Attacks : MonoBehaviour
 {
+    [SerializeField]
+    float shotSpeed = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
