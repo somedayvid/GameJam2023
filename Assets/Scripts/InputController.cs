@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using UnityEditor;
 
 public class InputController : MonoBehaviour
 {
@@ -26,6 +27,23 @@ public class InputController : MonoBehaviour
 
     public void useAbilities(InputAction.CallbackContext context)
     {
-
+        context.action.performed += ctx =>
+        {
+            switch (ctx.control.name)
+            {
+                case "1":
+                    Debug.Log("You pressed 1");
+                    break;
+                case "2":
+                    Debug.Log("You pressed 2");
+                    break;
+                case "3":
+                    Debug.Log("You pressed 3");
+                break;
+                case "4":
+                    Debug.Log("You pressed 4");
+                break;
+            }
+        };
     }
 }
