@@ -6,11 +6,6 @@ public class SpriteInfo : MonoBehaviour
 {
     [SerializeField]
     Vector2 rectSize;
-    //[SerializeField]
-    //Vector2 rectSize2;
-    //
-    //[SerializeField]
-    //List<Vector2> rectSize;
 
     [SerializeField]
     new SpriteRenderer renderer;
