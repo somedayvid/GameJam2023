@@ -8,10 +8,7 @@ using UnityEditor;
 public class InputController : MonoBehaviour
 {
     [SerializeField] MovementController movementController;
-
- 
     
-
     /// <summary>
     /// 
     /// </summary>

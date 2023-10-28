@@ -33,8 +33,6 @@ public class MovementController : MonoBehaviour
         camWidth = camHeight * cam.aspect;
 
         objectPosition = transform.position;
-
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,22 +40,8 @@ public class MovementController : MonoBehaviour
     {
 
         velocity = speed * Time.deltaTime * direction;
-        if (velocity != Vector3.zero)
-        {
-            objectPosition += velocity;
-
-            transform.position = objectPosition;
-
-            //didMove = true;
-
-            animator.SetBool("IsWalking", true);
-        }
-        else
-        {
-            //didMove = false;
-
-            animator.SetBool("IsWalking", false);
-        }
+        objectPosition += velocity;
+        transform.position = objectPosition;
 
         // Clamp the x and y values to camera view
         objectPosition.x = Mathf.Clamp(objectPosition.x, cam.transform.position.x - camWidth / 2, cam.transform.position.x + camWidth / 2);
@@ -65,6 +49,15 @@ public class MovementController : MonoBehaviour
 
         // Assign the clamped object position to the object's transform
         transform.position = objectPosition;
+
+        //if (Input.anyKeyDown)
+        //{
+        //    animator.SetBool("IsWalking", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("IsWalking", false);
+        //}
     }
 
     /// <summary>
