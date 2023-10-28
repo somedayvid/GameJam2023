@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a0231988e23964b84d4f0af8728b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
+  velocity: 0
 --- !u!1 &757812093
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,8 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f010b402bbbec1f4195b72088229800c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotSpeed: 1
+  shotSpeed: 5
   shotPrefab: {fileID: 4774499613850472037, guid: 99c0124b2e753d34e8259e55f9cfefa1, type: 3}
+  explosionPrefab: {fileID: 0}
 --- !u!114 &1604058050
 MonoBehaviour:
   m_ObjectHideFlags: 0

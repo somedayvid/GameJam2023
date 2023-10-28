@@ -14,6 +14,8 @@ public class Attacks : MonoBehaviour
     float shotSpeed = 1.0f;
     public GameObject shotPrefab;
 
+    public GameObject explosionPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +33,8 @@ public class Attacks : MonoBehaviour
     {
         // Create a new shot object from the prefab
         GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.identity);
-
+        shot.tag = "Shot";
+        
         // Calculate the direction towards the target position (mouse)
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
 
@@ -57,5 +60,22 @@ public class Attacks : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+    }
+
+
+
+    public void AOEExplosion()
+    {
+        GameObject aoe = Instantiate();
+    }
+
+    public void Freeze()
+    {
+
+    }
+
+    public void Heal()
+    {
+
     }
 }
