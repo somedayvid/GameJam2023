@@ -56,7 +56,7 @@ public class SpriteInfo : MonoBehaviour
     /// <summary>
     /// Wireframe to help see when debugging
     /// </summary>
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         
