@@ -52,7 +52,7 @@ public class CollisionManager : MonoBehaviour
         //TagCollision();
     }
 
-    /*
+    
     public void TagCollision()
     {
         GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
