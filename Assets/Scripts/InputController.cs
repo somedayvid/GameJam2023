@@ -9,6 +9,9 @@ public class InputController : MonoBehaviour
 {
     [SerializeField] MovementController movementController;
 
+ 
+    
+
     /// <summary>
     /// 
     /// </summary>
@@ -59,4 +62,7 @@ public class InputController : MonoBehaviour
             }
         };
     }
+
+
+    
 }

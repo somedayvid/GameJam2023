@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,11 @@ public class MovementController : MonoBehaviour
     private Vector3 direction = Vector3.zero;
     private Vector3 velocity = Vector3.zero;
 
+    public Vector2 moveInput;
+    private Rigidbody2D rb;
+    private Animator animator;
+    private bool didMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +33,31 @@ public class MovementController : MonoBehaviour
         camWidth = camHeight * cam.aspect;
 
         objectPosition = transform.position;
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        velocity = speed * Time.deltaTime * direction;
-        objectPosition += velocity;
 
-        transform.position = objectPosition;
+        velocity = speed * Time.deltaTime * direction;
+        if (velocity != Vector3.zero)
+        {
+            objectPosition += velocity;
+
+            transform.position = objectPosition;
+
+            //didMove = true;
+
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            //didMove = false;
+
+            animator.SetBool("IsWalking", false);
+        }
 
         // Clamp the x and y values to camera view
         objectPosition.x = Mathf.Clamp(objectPosition.x, cam.transform.position.x - camWidth / 2, cam.transform.position.x + camWidth / 2);
@@ -62,4 +84,32 @@ public class MovementController : MonoBehaviour
             }
         }
     }
+
+    /*
+
+    public void FixedUpdate()
+    {
+        if (moveInput != Vector2.zero)
+        {
+            bool success = MovePlayer(moveInput);
+        }
+    }
+
+    public void DidMove(InputValue value)
+    {
+        moveInput = value.Get<Vector2>();
+
+        if (moveInput != Vector2.zero)
+        {
+            animator.SetFloat("XInput", moveInput.x);
+            animator.SetFloat("YInput", moveInput.y);
+        }
+    }
+
+    public bool MovePlayer()
+    {
+        int count = rb.Cast(
+            )
+    }
+    */
 }

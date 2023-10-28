@@ -372,6 +372,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &1604058048
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604058041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7747ebb2877e56c4cad275b577f96bbc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4245161725952761392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451,7 +472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4231901928671692067, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.466
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4231901928671692067, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_LocalPosition.y
@@ -508,4 +529,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7925300711862144709, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1604058047}
+    - targetCorrespondingSourceObject: {fileID: 7925300711862144709, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1604058048}
   m_SourcePrefab: {fileID: 100100000, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
