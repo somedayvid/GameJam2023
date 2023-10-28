@@ -225,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214802641}
   - component: {fileID: 1214802640}
+  - component: {fileID: 1214802642}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -259,6 +260,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214802642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214802639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72f7b779dc954544ac90f4a3291b566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2013635208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,5 +343,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6343716400752750762, guid: ab1bbd090613e2241a10667093be77a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2013635215}
   m_SourcePrefab: {fileID: 100100000, guid: ab1bbd090613e2241a10667093be77a1, type: 3}
+--- !u!1 &2013635209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6343716400752750762, guid: ab1bbd090613e2241a10667093be77a1, type: 3}
+  m_PrefabInstance: {fileID: 2013635208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2013635212 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2685676567080740178, guid: ab1bbd090613e2241a10667093be77a1, type: 3}
+  m_PrefabInstance: {fileID: 2013635208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2013635215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013635209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41420f15b939a43a304ba2d10a500e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rectSize: {x: 0.8, y: 1.1}
+  renderer: {fileID: 2013635212}
+  isColliding: 0
