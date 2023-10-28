@@ -18,12 +18,37 @@ public class CollisionManager : MonoBehaviour
         
     }
 
-    public void CheckCollision(SpriteInfo player, SpriteInfo enemy)
+    public void TagCollision()
+    {
+        GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            foreach (GameObject shot in shots)
+            {
+                SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
+                SpriteInfo shotSprite = shot.GetComponent<SpriteInfo>();
+
+                if (CheckCollision(enemySprite, shotSprite))
+                {
+                    // Destroy both enemy and bullet upon collision
+                    Destroy(enemy);
+                    Destroy(shot);
+
+                }
+            }
+        }
+    }
+
+    public bool CheckCollision(SpriteInfo player, SpriteInfo enemy)
     {
         if (enemy.RectMin.x < player.RectMax.x && enemy.RectMax.x > player.RectMin.x &&
             enemy.RectMin.y < player.RectMax.y && enemy.RectMax.y > player.RectMin.y)
         {
             Debug.Log("Collision detected");
+            return true;
         }
+        return false;
     }
 }
