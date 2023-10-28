@@ -166,7 +166,7 @@ Transform:
   m_Children:
   - {fileID: 1003516420}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757812093
 GameObject:
@@ -1089,6 +1089,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: {fileID: 6010177999365465362, guid: 8a3dcd9b8cc278d42b8d598668aa6f0d, type: 3}
   heartsSpawned: []
+  isDead: 0
 --- !u!114 &1214802644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,32 +1244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c11a245db6790c49b9504bab859c4cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1604058051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604058041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fde25a684b535f489e7d2fa2f7d4fbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heart: {fileID: 6010177999365465362, guid: 8a3dcd9b8cc278d42b8d598668aa6f0d, type: 3}
-  heartsSpawned: []
---- !u!114 &1604058056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1604058041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0c2b91d18858da4899e020455495110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1786877688299774663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1280,6 +1255,14 @@ PrefabInstance:
     - target: {fileID: 1357207214732073383, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357207214732073383, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357207214732073383, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1357207214732073383, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
       propertyPath: m_LocalPosition.x
