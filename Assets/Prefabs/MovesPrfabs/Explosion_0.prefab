@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1200318399599283035}
   - component: {fileID: 4623610623183245596}
   - component: {fileID: 6150690371289253689}
+  - component: {fileID: -4614834388459838032}
   m_Layer: 0
   m_Name: Explosion_0
   m_TagString: AOE
@@ -129,3 +130,17 @@ MonoBehaviour:
   - {fileID: 2115525812, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
   - {fileID: 1360498410, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
   frameDuration: 5
+--- !u!114 &-4614834388459838032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2250151344252483842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41420f15b939a43a304ba2d10a500e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1200318399599283035}
+  rectSize: {x: 0, y: 0}
