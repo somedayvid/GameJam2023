@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
+    [SerializeField] SpriteInfo player;
+    [SerializeField] bool isColliding;
+    public bool Colliding { get { return isColliding; } }
+
     [SerializeField] List<SpriteInfo> enemySprites = new List<SpriteInfo>();
 
     // Start is called before the first frame update
@@ -37,6 +41,21 @@ public class CollisionManager : MonoBehaviour
                     Destroy(shot);
 
                 }
+            }
+        }
+
+        foreach (GameObject enemy in enemies)
+        {
+            SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
+
+            if (CheckCollision(player, enemySprite))
+            {
+                Destroy(enemy);
+                isColliding = true;
+            }
+            else
+            {
+                isColliding = false;
             }
         }
     }
