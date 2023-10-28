@@ -5,25 +5,61 @@ using UnityEngine.SceneManagement;
 
 public class SceneManaging : MonoBehaviour
 {
-    public void ToInstructions()
+    /// <summary>
+    /// Load the instructions scene
+    /// </summary>
+    public void LoadInstructions()
     {
-        SceneManager.LoadScene("Instructions");
+        try {
+            SceneManager.LoadScene("Instructions");
+        }
+        catch (System.Exception error) {
+            throw new System.Exception(error.Message);
+        }
     }
-    public void StartGame()
+
+    /// <summary>
+    /// Load the main game scene
+    /// </summary>
+    public void LoadGame()
     {
-        SceneManager.LoadScene("Main");
+        try {
+            SceneManager.LoadScene("Main");
+        }
+        catch (System.Exception error) {
+            throw new System.Exception(error.Message);
+        }
     }
-    public void GameOver()
+
+    /// <summary>
+    /// Load the game over scene
+    /// </summary>
+    public void LoadGameOver()
     {
-        //if (player.dead = true)
-        //{
-        SceneManager.LoadScene("GameOver");
-        //}
+        try {
+            SceneManager.LoadScene("GameOver");
+        }
+        catch (System.Exception error) {
+            throw new System.Exception(error.Message);
+        }
     }
-    public void GoHome()
+
+    /// <summary>
+    /// Load the home scene
+    /// </summary>
+    public void LoadHome()
     {
-        SceneManager.LoadScene("Home");
+        try {
+            SceneManager.LoadScene("Home");
+        }
+        catch (System.Exception error) {
+            throw new System.Exception(error.Message);
+        }
     }
+
+    /// <summary>
+    /// Quit game
+    /// </summary>
     public void QuitGame()
     {
         Application.Quit();

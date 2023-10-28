@@ -9,11 +9,19 @@ public class InputController : MonoBehaviour
 {
     [SerializeField] MovementController movementController;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
     public void OnMove(InputAction.CallbackContext context)
     {
         movementController.SetDirection(context.ReadValue<Vector2>());
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
     public void onAim(InputAction.CallbackContext context)
     {
         context.action.performed += ctx =>
@@ -21,10 +29,15 @@ public class InputController : MonoBehaviour
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Debug.Log("Your mouse position is: " + mousePosition);
+            // Call the shoot method from the player based on mousePosition
         };
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
     public void useAbilities(InputAction.CallbackContext context)
     {
         context.action.performed += ctx =>
