@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 54835559937648589}
   m_Layer: 0
   m_Name: WizardPenguin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementController: {fileID: 7008500697213456944}
+  attacks: {fileID: 0}
 --- !u!114 &7008500697213456944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  moveInput: {x: 0, y: 0}
 --- !u!114 &54835559937648589
 MonoBehaviour:
   m_ObjectHideFlags: 0
