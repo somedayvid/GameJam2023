@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5750123863809702908}
   - component: {fileID: 3161961160765209867}
   - component: {fileID: 655937782704364420}
+  - component: {fileID: 4397468295700125047}
   m_Layer: 0
   m_Name: Polar Bear Enemy
   m_TagString: Untagged
@@ -74,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 12c729151d46ef748ae0001fc5fb0389, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44d074930e46d10478fc910b2637570d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -97,5 +98,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a41420f15b939a43a304ba2d10a500e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 3161961160765209867}
   rectSize: {x: 0, y: 0}
+--- !u!114 &4397468295700125047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117282331108445656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a0231988e23964b84d4f0af8728b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
