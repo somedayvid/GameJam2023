@@ -64,9 +64,11 @@ public class Attacks : MonoBehaviour
 
 
 
-    public void AOEExplosion()
+    public void AOEExplosion(Vector2 targetPosistion, float lifeTime)
     {
-        //GameObject aoe = Instantiate();
+        GameObject aoe = Instantiate(explosionPrefab, targetPosistion, Quaternion.identity);
+
+        Destroy(aoe, lifeTime);
     }
 
     public void Freeze()

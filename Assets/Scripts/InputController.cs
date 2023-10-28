@@ -62,6 +62,8 @@ public class InputController : MonoBehaviour
                     break;
                 case "2":
                     Debug.Log("You pressed 2");
+                    attacks.AOEExplosion(onAim(), 2f);
+
                     break;
                 case "3":
                     Debug.Log("You pressed 3");

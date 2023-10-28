@@ -26,6 +26,7 @@ public class CollisionManager : MonoBehaviour
     {
         GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] explosions = GameObject.FindGameObjectsWithTag("AOE");
 
         foreach (GameObject enemy in enemies)
         {
@@ -42,6 +43,21 @@ public class CollisionManager : MonoBehaviour
 
                 }
             }
+
+            foreach(GameObject explosion in explosions)
+            {
+                SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
+                SpriteInfo explosionSprite = explosion.GetComponent<SpriteInfo>();
+
+                if (CheckCollision(enemySprite, explosionSprite))
+                {
+                    // Destroy both enemy and bullet upon collision
+                    Destroy(enemy);
+
+                }
+            }
+
+
         }
 
         foreach (GameObject enemy in enemies)
