@@ -55,7 +55,8 @@ public class InputController : MonoBehaviour
             {
                 case "1":
                     Debug.Log("You pressed 1");
-                    attacks.FireShot(onAim(), 2f);
+                    //OnAim for mouse posistion and then a lifetime
+                    attacks.FireShot(onAim(), 5f);
 
                     
                     break;
