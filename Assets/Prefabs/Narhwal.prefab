@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5993355706548536500}
   - component: {fileID: 8330631114212254753}
+  - component: {fileID: 38178292237242285}
+  - component: {fileID: 5588823290174411575}
   m_Layer: 0
   m_Name: Narhwal
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +86,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &38178292237242285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035325964674881971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41420f15b939a43a304ba2d10a500e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 8330631114212254753}
+  rectSize: {x: 0, y: 0}
+--- !u!114 &5588823290174411575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3035325964674881971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f995cf7e525a74297116cc3e4c499c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
