@@ -15,6 +15,7 @@ public class CollisionManager : MonoBehaviour
     private int enemiesToKill;
 
     private int currentRound = 0;
+    private HealthManagement healthManagement;
 
     private float screenHeight;
     private float screenWidth;
@@ -24,6 +25,8 @@ public class CollisionManager : MonoBehaviour
     {
         screenHeight = 2f * Camera.main.orthographicSize;
         screenWidth = screenHeight * Camera.main.aspect;
+
+        healthManagement = GetComponent<HealthManagement>();
     }
 
     // Update is called once per frame
@@ -50,6 +53,13 @@ public class CollisionManager : MonoBehaviour
         }
 
         TagCollision();
+
+        if(healthManagement.isDead)
+        {
+            ResetGame();
+        }
+
+        //TagCollision();
     }
 
     
@@ -141,5 +151,17 @@ public class CollisionManager : MonoBehaviour
         Destroy(enemySprites[i].gameObject);
         enemySprites.Remove(enemySprites[i]);
         enemiesKilled++;
+    }
+
+    private void ResetGame()
+    {
+        for (int i = 0;i < enemySprites.Count; i++)
+        {
+            Destroy(enemySprites[i].gameObject);
+            enemySprites.Remove(enemySprites[i]);
+        }
+
+        enemiesKilled = 0;
+        enemiesToKill = 0;
     }
 }
