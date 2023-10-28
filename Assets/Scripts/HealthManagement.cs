@@ -10,6 +10,8 @@ public class HealthManagement : MonoBehaviour
     List<SpriteInfo> heartsSpawned = new List<SpriteInfo>();
     private int startingHearts = 5;
     private Vector3 heartLocation;
+    private bool isDead;
+    public bool Died { get { return isDead; } }
 
     private CollisionManager collisionManager;
 

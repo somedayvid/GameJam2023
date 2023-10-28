@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManaging : MonoBehaviour
 {
+    private HealthManagement healthManagement;
+
+    void Start()
+    {
+        healthManagement.GetComponent<HealthManagement>(); 
+    }
+
     /// <summary>
     /// Load the instructions scene
     /// </summary>
@@ -37,7 +44,10 @@ public class SceneManaging : MonoBehaviour
     public void LoadGameOver()
     {
         try {
-            SceneManager.LoadScene("GameOver");
+            if (healthManagement.Died)
+            {
+                SceneManager.LoadScene("GameOver");
+            }
         }
         catch (System.Exception error) {
             throw new System.Exception(error.Message);
