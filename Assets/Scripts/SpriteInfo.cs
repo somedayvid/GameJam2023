@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class SpriteInfo : MonoBehaviour
 {
-    [SerializeField] Vector2 rectSize;
     [SerializeField] new SpriteRenderer renderer;
-    [SerializeField] public bool isColliding = false;
+    [SerializeField] Vector2 rectSize;
 
     public Vector2 RectMin
     {
         get
         {
-            float minX = transform.position.x - (rectSize.x / 2);
-            float minY = transform.position.y - (rectSize.y / 2);
-            return new Vector2(minX, minY);
+            return new Vector2(
+                transform.position.x - (rectSize.x / 2f),
+                transform.position.y - (rectSize.y / 2f));
         }
     }
 
@@ -22,27 +21,21 @@ public class SpriteInfo : MonoBehaviour
     {
         get
         {
-            float maxX = transform.position.x + (rectSize.x / 2);
-            float maxY = transform.position.y + (rectSize.y / 2);
-            return new Vector2(maxX, maxY);
+            return new Vector2(
+                transform.position.x + (rectSize.x / 2f),
+                transform.position.y + (rectSize.y / 2f));
         }
     }
 
-
+    private void Start()
+    {
+        rectSize = new Vector2(renderer.bounds.size.x, renderer.bounds.size.y);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isColliding)
-        {
-            //draw red
-            renderer.color = Color.red;
-        }
-        else
-        {
-            //draw white
-            renderer.color = Color.white;
-        }
+
     }
 
     /// <summary>
