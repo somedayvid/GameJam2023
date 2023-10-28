@@ -9,7 +9,7 @@ public class SceneManaging : MonoBehaviour
 
     void Start()
     {
-        healthManagement.GetComponent<HealthManagement>(); 
+        //healthManagement.GetComponent<HealthManagement>(); 
     }
 
     /// <summary>

@@ -8,20 +8,51 @@ public class CollisionManager : MonoBehaviour
     [SerializeField] bool isColliding;
     public bool Colliding { get { return isColliding; } }
 
+    [SerializeField] SpriteInfo enemy;
     [SerializeField] List<SpriteInfo> enemySprites = new List<SpriteInfo>();
+    private List<Vector2> enemyLocations = new List<Vector2>();
+    private int enemiesKilled = 0;
+    private int enemiesToKill;
+
+    private int currentRound = 0;
+
+    private float screenHeight;
+    private float screenWidth;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        screenHeight = 2f * Camera.main.orthographicSize;
+        screenWidth = screenHeight * Camera.main.aspect;
     }
 
     // Update is called once per frame
     void Update()
     {
-        TagCollision();
+        if (currentRound == 0 || enemiesToKill == enemiesKilled)
+        {
+            currentRound++;
+
+            SpawnEnemies();
+        }
+
+        foreach (SpriteInfo enemy in enemySprites)
+        {
+            if (CheckCollision(player, enemy))
+            {
+                isColliding = true;
+                Destroy(enemy);
+            }
+            else
+            {
+                isColliding = false;
+            }
+        }
+
+        //TagCollision();
     }
 
+    /*
     public void TagCollision()
     {
         GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
@@ -59,15 +90,43 @@ public class CollisionManager : MonoBehaviour
             }
         }
     }
+    */
 
     public bool CheckCollision(SpriteInfo player, SpriteInfo enemy)
     {
-        if (enemy.RectMin.x < player.RectMax.x && enemy.RectMax.x > player.RectMin.x &&
-            enemy.RectMin.y < player.RectMax.y && enemy.RectMax.y > player.RectMin.y)
+        if (enemy.RectMin.x < player.RectMax.x &&
+            enemy.RectMax.x > player.RectMin.x &&
+            enemy.RectMin.y < player.RectMax.y &&
+            enemy.RectMax.y > player.RectMin.y)
         {
             Debug.Log("Collision detected");
             return true;
         }
         return false;
+    }
+
+    public void SpawnEnemies()
+    {
+        enemiesKilled = 0;
+        enemiesToKill = currentRound + 1;
+
+        for (int j = 0; j < enemiesToKill; j++)
+        {
+            float newX = Random.Range(-screenWidth / 2, screenWidth / 2);
+            float newY = Random.Range(-screenHeight / 2, screenHeight / 2);
+            Vector2 newLoc = new Vector2(newX, newY);
+            enemyLocations.Add(newLoc);
+        }
+        for (int i = 0; i < enemyLocations.Count; i++)
+        {
+                enemySprites.Add(Instantiate(enemy, enemyLocations[i], Quaternion.identity));
+        }
+    }
+
+    public void DestroyEnemy(int i)
+    {
+        Destroy(enemySprites[i]);
+        enemySprites.Remove(enemySprites[i]);
+        enemiesToKill--;
     }
 }

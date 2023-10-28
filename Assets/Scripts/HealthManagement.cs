@@ -24,7 +24,7 @@ public class HealthManagement : MonoBehaviour
         screenHeight = 2f * Camera.main.orthographicSize;
         screenWidth = screenHeight * Camera.main.aspect;
 
-        collisionManager.GetComponent<CollisionManager>();
+        collisionManager = GetComponent<CollisionManager>();
 
         //Starting Location
         heartLocation = new Vector3((0 - screenWidth / 2 + .5f), (0 + screenHeight / 2 - .5f), 0);
@@ -33,19 +33,28 @@ public class HealthManagement : MonoBehaviour
         {
             heartsSpawned.Add(Instantiate(heart, heartLocation, Quaternion.identity));
 
-            heartLocation.x += .5f;
+            heartLocation.x += 1f;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0;i < heartsSpawned.Count;i++)
+        for (int i = heartsSpawned.Count - 1;i >= 0;i--)
         {
             if (collisionManager.Colliding)
             {
                 DestroyHeart(i);
             }
+        }
+
+        if (startingHearts <= 0)
+        {
+            isDead = true;
+        }
+        else
+        {
+            isDead = false;
         }
     }
 
@@ -53,5 +62,6 @@ public class HealthManagement : MonoBehaviour
     {
         Destroy(heartsSpawned[i].gameObject);
         heartsSpawned.Remove(heartsSpawned[i]);
+        startingHearts--;
     }
 }
