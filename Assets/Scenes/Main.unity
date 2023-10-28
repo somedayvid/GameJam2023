@@ -466,6 +466,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 54835559937648589, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4231901928671692067, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -513,6 +517,14 @@ PrefabInstance:
     - target: {fileID: 4231901928671692067, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043924245099271189, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      propertyPath: m_Size.x
+      value: 0.455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5043924245099271189, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 7008500697213456944, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: speed
