@@ -33,6 +33,8 @@ public class MovementController : MonoBehaviour
         camWidth = camHeight * cam.aspect;
 
         objectPosition = transform.position;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,14 +52,17 @@ public class MovementController : MonoBehaviour
         // Assign the clamped object position to the object's transform
         transform.position = objectPosition;
 
-        //if (Input.anyKeyDown)
-        //{
-        //    animator.SetBool("IsWalking", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("IsWalking", false);
-        //}
+        if (Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D))
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
 
     /// <summary>
