@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //Instantiate(player);
     }
 
     // Update is called once per frame
@@ -22,9 +23,11 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, player.transform.position);
     }
+    */
 }
