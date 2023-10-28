@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInputs",
+    "name": "KeyMapping",
     "maps": [
         {
             "name": "Player",
@@ -9,19 +9,19 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "022b1893-96bd-4eaf-b9ae-f44188d7acad",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Fire",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0355a979-0852-4a8b-92a0-4b4ba7e7bc3f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Ability",

@@ -5,64 +5,62 @@ using UnityEngine.InputSystem;
 
 public class MovementController : MonoBehaviour
 {
-    Vector3 objectPosition = Vector3.zero;
-    Vector3 direction = Vector3.zero;
-    Vector3 velocity = Vector3.zero;
+    // Variable field
+    [SerializeField] float speed = 5f;
+    private SpriteRenderer spriteRenderer;
 
-    float screenHeight;
-    float screenWidth;
+    private Camera cam;
+    private float camHeight;
+    private float camWidth;
 
-    [SerializeField]
-    float speed = 0;
-
-    /// <summary>
-    /// Direction Property for Controller to change direction
-    /// </summary>
-    public Vector3 ObjectDirection
-    {
-        set
-        {
-            if (value != null)
-            {
-                direction = value.normalized;
-            }
-        }
-    }
-
+    private Vector3 objectPosition = Vector3.zero;
+    private Vector3 direction = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
-        objectPosition = transform.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        cam = Camera.main;
 
-        screenHeight = 2f * Camera.main.orthographicSize;
-        screenWidth = screenHeight * Camera.main.aspect;
+        camHeight = 2.0f * cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
+        objectPosition = transform.position;
     }
+
     // Update is called once per frame
     void Update()
     {
-        //Move Object
-        velocity = direction * speed * Time.deltaTime;
+        velocity = speed * Time.deltaTime * direction;
         objectPosition += velocity;
+
         transform.position = objectPosition;
 
-        //Warp Around Screem X
-        if (transform.position.x < -(screenWidth / 2))
+        // Clamp the x and y values to camera view
+        objectPosition.x = Mathf.Clamp(objectPosition.x, cam.transform.position.x - camWidth / 2, cam.transform.position.x + camWidth / 2);
+        objectPosition.y = Mathf.Clamp(objectPosition.y, cam.transform.position.y - camHeight / 2, cam.transform.position.y + camHeight / 2);
+
+        // Assign the clamped object position to the object's transform
+        transform.position = objectPosition;
+    }
+
+    /// <summary>
+    /// Sets the new direction of the object
+    /// </summary>
+    /// <param name="newDirection">A vector3 of the direction</param>
+    public void SetDirection(Vector3 newDirection)
+    {
+        if (newDirection != null)
         {
-            //Clampa the speed
-        }
-        else if (transform.position.x > (screenWidth / 2))
-        {
-            //HELPPPP
-        }
-        //Warp Around Screen Y
-        if (transform.position.y < -(screenHeight / 2))
-        {
-           //Please Clamp speed here
-        }
-        else if (transform.position.y > screenHeight / 2)
-        {
-            //Jason Help
+            direction = newDirection.normalized;
+
+            // Flip the sprite only if the current direction is different from the previous direction and not zero
+            if ((direction.x < 0f) != spriteRenderer.flipX && direction.x != 0f)
+            {
+                spriteRenderer.flipX = direction.x < 0f;
+            }
         }
     }
+
 }

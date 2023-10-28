@@ -10,12 +10,18 @@ public class InputController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementController.ObjectDirection = context.ReadValue<Vector2>();
+        movementController.SetDirection(context.ReadValue<Vector2>());
     }
 
     public void onAim(InputAction.CallbackContext context)
     {
-        Vector2 mousePosition = context.ReadValue<Vector2>();
+        context.action.performed += ctx =>
+        {
+            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Debug.Log("Your mouse position is: " + mousePosition);
+        };
+
     }
 
     public void useAbilities(InputAction.CallbackContext context)
