@@ -8,7 +8,8 @@ using UnityEditor;
 public class InputController : MonoBehaviour
 {
     [SerializeField] MovementController movementController;
-    
+    [SerializeField] Attacks attacks;
+
     /// <summary>
     /// 
     /// </summary>
@@ -34,18 +35,29 @@ public class InputController : MonoBehaviour
 
     }
 
+    public Vector2 onAim()
+    {
+            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            return mousePosition;
+    }
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="context"></param>
     public void useAbilities(InputAction.CallbackContext context)
     {
+        attacks = GetComponent<Attacks>();
         context.action.performed += ctx =>
         {
             switch (ctx.control.name)
             {
                 case "1":
                     Debug.Log("You pressed 1");
+                    attacks.FireShot(onAim(), 2f);
+
+                    
                     break;
                 case "2":
                     Debug.Log("You pressed 2");
