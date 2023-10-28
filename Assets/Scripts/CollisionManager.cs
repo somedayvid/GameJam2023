@@ -15,7 +15,7 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        TagCollision();
     }
 
     public void TagCollision()
