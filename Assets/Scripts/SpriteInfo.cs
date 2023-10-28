@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SpriteInfo : MonoBehaviour
 {
-    [SerializeField]
-    Vector2 rectSize;
+    [SerializeField] Vector2 rectSize;
 
     [SerializeField]
     new SpriteRenderer renderer;
