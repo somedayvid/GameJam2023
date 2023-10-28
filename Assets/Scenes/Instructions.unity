@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1388545445}
         m_TargetAssemblyTypeName: SceneManaging, Assembly-CSharp
-        m_MethodName: GoHome
+        m_MethodName: LoadHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
