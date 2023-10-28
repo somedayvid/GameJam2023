@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a41420f15b939a43a304ba2d10a500e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 3161961160765209867}
+  renderer: {fileID: 277994304, guid: 1169b462e032c3d4baaf29d831cb7de6, type: 2}
   rectSize: {x: 0, y: 0}
 --- !u!114 &4397468295700125047
 MonoBehaviour:

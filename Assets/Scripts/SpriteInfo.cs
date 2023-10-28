@@ -8,6 +8,9 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField] new SpriteRenderer renderer;
     [SerializeField] Vector2 rectSize;
 
+    private Animator animator;
+    private InputController inputController;
+
     /// <summary>
     /// Get property for minimum x and y values of the sprite
     /// </summary>
@@ -35,9 +38,19 @@ public class SpriteInfo : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
         rectSize = new Vector2(renderer.bounds.size.x, renderer.bounds.size.y);
+
+        inputController = GetComponent<InputController>();
+        animator = GetComponent<Animator>();
+    }
+    void Update()
+    {
+        if (inputController.isExploding)
+        {
+            animator.SetBool("IsExploding", true);
+        }
     }
 
     /// <summary>

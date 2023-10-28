@@ -10,7 +10,7 @@ public class InputController : MonoBehaviour
     [SerializeField] MovementController movementController;
     [SerializeField] Attacks attacks;
 
-    private Animator animator;
+    public bool isExploding;
 
     /// <summary>
     /// 
@@ -19,8 +19,6 @@ public class InputController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movementController.SetDirection(context.ReadValue<Vector2>());
-
-        animator = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -67,7 +65,7 @@ public class InputController : MonoBehaviour
                 case "2":
                     Debug.Log("You pressed 2");
                     attacks.AOEExplosion(onAim(), 2f);
-                    animator.SetBool("IsExploding", true);
+                    isExploding = true;
 
                     break;
                 case "3":

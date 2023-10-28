@@ -260,6 +260,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &962835754 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+  m_PrefabInstance: {fileID: 4245161725952761392}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003516419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 121928691148541506, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 962835754}
     - target: {fileID: 1357207214732073383, guid: 93e6ff5db570fbb4fa13d47286a35d16, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1350,37 +1359,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 655937782704364420, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: renderer
-      value: 
-      objectReference: {fileID: 277994304}
-    - target: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 44d074930e46d10478fc910b2637570d, type: 3}
-    - target: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397468295700125047, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: velocity
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
       propertyPath: m_Name
       value: Polar Bear Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
       propertyPath: m_RootOrder
@@ -1490,6 +1471,10 @@ PrefabInstance:
     - target: {fileID: 4231901928671692067, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031806559729458885, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      propertyPath: exploding
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5043924245099271189, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_Size.x
