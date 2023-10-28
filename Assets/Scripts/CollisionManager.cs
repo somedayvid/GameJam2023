@@ -53,6 +53,7 @@ public class CollisionManager : MonoBehaviour
         }
 
         TagCollision();
+
         if(healthManagement.isDead)
         {
             ResetGame();
