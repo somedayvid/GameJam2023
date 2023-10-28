@@ -36,12 +36,12 @@ public class CollisionManager : MonoBehaviour
             SpawnEnemies();
         }
 
-        foreach (SpriteInfo enemy in enemySprites)
+        for (int i = 0;i < enemySprites.Count;i++)
         {
-            if (CheckCollision(player, enemy))
+            if (CheckCollision(player, enemySprites[i]))
             {
                 isColliding = true;
-                Destroy(enemy);
+                DestroyEnemy(i);
             }
             else
             {
@@ -125,8 +125,8 @@ public class CollisionManager : MonoBehaviour
 
     public void DestroyEnemy(int i)
     {
-        Destroy(enemySprites[i]);
+        Destroy(enemySprites[i].gameObject);
         enemySprites.Remove(enemySprites[i]);
-        enemiesToKill--;
+        enemiesKilled++;
     }
 }

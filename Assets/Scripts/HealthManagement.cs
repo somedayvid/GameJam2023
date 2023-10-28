@@ -10,7 +10,7 @@ public class HealthManagement : MonoBehaviour
     List<SpriteInfo> heartsSpawned = new List<SpriteInfo>();
     private int startingHearts = 5;
     private Vector3 heartLocation;
-    private bool isDead;
+    public bool isDead;
     public bool Died { get { return isDead; } }
 
     private CollisionManager collisionManager;
@@ -48,7 +48,7 @@ public class HealthManagement : MonoBehaviour
             }
         }
 
-        if (startingHearts <= 0)
+        if (heartsSpawned.Count == 0)
         {
             isDead = true;
         }

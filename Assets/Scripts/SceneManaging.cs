@@ -9,7 +9,14 @@ public class SceneManaging : MonoBehaviour
 
     void Start()
     {
-        //healthManagement.GetComponent<HealthManagement>(); 
+        healthManagement = GetComponent<HealthManagement>(); 
+    }
+    void Update()
+    {
+        if (healthManagement.isDead)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     /// <summary>
