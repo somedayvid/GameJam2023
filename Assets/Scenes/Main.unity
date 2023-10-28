@@ -128,6 +128,24 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
   m_PrefabInstance: {fileID: 4245161725952761392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &571149976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+  m_PrefabInstance: {fileID: 4245161725952761392}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &571149979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571149976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a0231988e23964b84d4f0af8728b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
 --- !u!1 &757812093
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +500,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 571149979}
   m_SourcePrefab: {fileID: 100100000, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
 --- !u!1001 &8328188066332295157
 PrefabInstance:
@@ -559,6 +580,10 @@ PrefabInstance:
     - target: {fileID: 7925300711862144709, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
       propertyPath: m_Name
       value: WizardPenguin
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925300711862144709, guid: 56becb55737bd79468fb506c1f4e9646, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
