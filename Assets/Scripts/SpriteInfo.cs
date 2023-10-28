@@ -5,9 +5,7 @@ using UnityEngine;
 public class SpriteInfo : MonoBehaviour
 {
     [SerializeField] Vector2 rectSize;
-
     [SerializeField] new SpriteRenderer renderer;
-
     [SerializeField] public bool isColliding = false;
 
     public Vector2 RectMin
