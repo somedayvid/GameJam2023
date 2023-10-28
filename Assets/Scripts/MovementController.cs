@@ -62,5 +62,4 @@ public class MovementController : MonoBehaviour
             }
         }
     }
-
 }
