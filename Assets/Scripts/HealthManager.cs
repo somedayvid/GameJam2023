@@ -30,11 +30,10 @@ public class HealthManager : MonoBehaviour
     /// Damages the player by the given amount
     /// </summary>
     /// <param name="damage"></param>
-    public void DamagePlayer(float damage)
+    public void DamagePlayer(float damage, float duration)
     {
-        // health -= damage;
-        // healthBar.fillAmount = health / 100f;
-        StartCoroutine(DecreaseHealthOverTime(damage, 2f));
+        StartCoroutine(HealthOverTime(damage, duration));
+        health = Mathf.Clamp(health, 0, 100);
     }
 
     /// <summary>
@@ -43,10 +42,12 @@ public class HealthManager : MonoBehaviour
     /// <param name="heal"></param>
     public void HealPlayer(float heal)
     {
-        health += heal;
+/*        health += heal;
         health = Mathf.Clamp(health, 0, 100);
 
-        healthBar.fillAmount = health / 100f;
+        healthBar.fillAmount = health / 100f;*/
+        StartCoroutine(HealthOverTime(heal, 1f));
+        health = Mathf.Clamp(health, 0, 100);
     }
 
     /// <summary>
@@ -55,7 +56,7 @@ public class HealthManager : MonoBehaviour
     /// <param name="damage"></param>
     /// <param name="duration"></param>
     /// <returns></returns>
-    IEnumerator DecreaseHealthOverTime(float damage, float duration)
+    IEnumerator HealthOverTime(float damage, float duration)
     {
         float elapsedTime = 0f;
 
