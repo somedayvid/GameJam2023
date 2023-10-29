@@ -23,11 +23,6 @@ public class EnemyMovement : MonoBehaviour
         camHeight = 2.0f * cam.orthographicSize;
         camWidth = camHeight * cam.aspect;
 
-        camRight = camWidth/2;
-        camLeft = -camWidth/2;
-        camTop = camHeight/2;
-        camBottom = -camHeight/2;
-
         player = GameObject.FindWithTag("Player");
     }
 
@@ -37,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 thing = player.transform.position - transform.position;
         direction = thing.normalized;
         transform.position += direction * velocity * Time.deltaTime;
+
     }
 
     private void AnimateMove()
@@ -46,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Spawn()
     {
+        UpdateBounds();
         int spawnPoint = Random.Range(0, 4);
         switch (spawnPoint)
         {
@@ -62,6 +59,18 @@ public class EnemyMovement : MonoBehaviour
                 Instantiate(this, new Vector3(Random.Range(camRight - 5, camRight), Random.Range(camBottom, camTop)), Quaternion.identity);
                 break;
         }
+    }
+
+    private void UpdateBounds()
+    {
+        cam = Camera.main;
+        camHeight = 2.0f * cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
+        camRight = camWidth/2;
+        camLeft = -camWidth/2;
+        camTop = camHeight/2;
+        camBottom = -camHeight/2;
     }
 
     /*
