@@ -42,10 +42,10 @@ public class HealthManagement : MonoBehaviour
     {
         for (int i = heartsSpawned.Count - 1;i >= 0;i--)
         {
-            if (collisionManager.Colliding)
-            {
-                DestroyHeart(i);
-            }
+            //if (collisionManager.Colliding)
+            //{
+            //    DestroyHeart(i);
+            //}
         }
 
         if (heartsSpawned.Count == 0)

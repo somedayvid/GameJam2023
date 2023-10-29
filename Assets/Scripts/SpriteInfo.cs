@@ -40,6 +40,15 @@ public class SpriteInfo : MonoBehaviour
         rectSize = new Vector2(renderer.bounds.size.x, renderer.bounds.size.y);
     }
 
+    public bool CollideWith(SpriteInfo collidee)
+    {
+        if (this.RectMin.x < collidee.RectMax.x && this.RectMax.x > collidee.RectMin.x && this.RectMax.y > collidee.RectMin.y && this.RectMin.y < collidee.RectMax.y)
+        {
+            return true;
+        }
+        else return false;
+    }
+
     /// <summary>
     /// Wireframe to help see when debugging
     /// </summary>
@@ -48,5 +57,7 @@ public class SpriteInfo : MonoBehaviour
         Gizmos.color = Color.green;
         
         Gizmos.DrawWireCube(transform.position, rectSize);
+        Gizmos.DrawWireSphere(RectMin, .25f);
+        Gizmos.DrawWireSphere(RectMax, .25f);
     }
 }

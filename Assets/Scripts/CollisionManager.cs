@@ -1,167 +1,123 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionManager : MonoBehaviour
 {
-    [SerializeField] SpriteInfo player;
-    [SerializeField] bool isColliding;
-    public bool Colliding { get { return isColliding; } }
+    public GameObject attackContainer;
 
-    [SerializeField] SpriteInfo enemy;
-    [SerializeField] List<SpriteInfo> enemySprites = new List<SpriteInfo>();
-    private List<Vector2> enemyLocations = new List<Vector2>();
-    private int enemiesKilled = 0;
-    private int enemiesToKill;
+    public GameObject enemyContainer;
 
-    private int currentRound = 0;
-    private HealthManagement healthManagement;
+    public SpriteInfo player;
 
-    private float screenHeight;
-    private float screenWidth;
+    public List<SpriteInfo> attackList = new List<SpriteInfo>();
+
+    public List<SpriteInfo> enemyList = new List<SpriteInfo>();
+
+    private List<SpriteInfo> markedToDestroy = new List<SpriteInfo>();
 
     // Start is called before the first frame update
     void Start()
     {
-        screenHeight = 2f * Camera.main.orthographicSize;
-        screenWidth = screenHeight * Camera.main.aspect;
-
-        healthManagement = GetComponent<HealthManagement>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentRound == 0 || enemiesToKill == enemiesKilled)
-        {
-            currentRound++;
-
-            SpawnEnemies();
-        }
-
-        for (int i = 0;i < enemySprites.Count;i++)
-        {
-            if (CheckCollision(player, enemySprites[i]))
-            {
-                isColliding = true;
-                DestroyEnemy(i);
-            }
-            else
-            {
-                isColliding = false;
-            }
-        }
-
-        TagCollision();
-
-        if(healthManagement.isDead)
-        {
-            ResetGame();
-        }
-
-        //TagCollision();
+        EnemyCollision();
+        //OutOfBounds();
+        DestroyList();
     }
 
-    
-    public void TagCollision()
+    public void EnemyCollision()
     {
-        GameObject[] shots = GameObject.FindGameObjectsWithTag("Shot");
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject[] explosions = GameObject.FindGameObjectsWithTag("AOE");
+        attackContainer.GetComponentsInChildren<SpriteInfo>(attackList);
+        enemyContainer.GetComponentsInChildren<SpriteInfo>(enemyList);
 
-        foreach (GameObject enemy in enemies)
+        foreach (SpriteInfo enemy in enemyList)
         {
-            foreach (GameObject shot in shots)
+            foreach (SpriteInfo bullet in attackList)
             {
-                SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
-                SpriteInfo shotSprite = shot.GetComponent<SpriteInfo>();
-
-                if (CheckCollision(enemySprite, shotSprite))
+                if (bullet.CollideWith(enemy))
                 {
-                    // Destroy both enemy and bullet upon collision
-                    Destroy(enemy);
-                    Destroy(shot);
-
+                    markedToDestroy.Add(bullet);
+                    markedToDestroy.Add(enemy);
+                    break;
                 }
             }
-
-            foreach(GameObject explosion in explosions)
+            if (enemy.CollideWith(player))
             {
-                SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
-                SpriteInfo explosionSprite = explosion.GetComponent<SpriteInfo>();
-
-                if (CheckCollision(enemySprite, explosionSprite))
-                {
-                    // Destroy both enemy and bullet upon collision
-                    Destroy(enemy);
-
-                }
-            }
-        }
-
-        foreach (GameObject enemy in enemies)
-        {
-            SpriteInfo enemySprite = enemy.GetComponent<SpriteInfo>();
-
-            if (CheckCollision(player, enemySprite))
-            {
-                Destroy(enemy);
-                isColliding = true;
-            }
-            else
-            {
-                isColliding = false;
+                markedToDestroy.Add(enemy);
+                //player takes damage code here
+                break;
             }
         }
     }
 
-    public bool CheckCollision(SpriteInfo player, SpriteInfo enemy)
+    //possibly not needed
+    //public void OutOfBounds()
+    //{   
+    //    foreach (SpriteInfo bullet in attackList)
+    //    {
+    //        if (bullet.transform.position.y > 6)
+    //        {
+    //            markedToDestroy.Add(bullet);
+    //        }
+    //    }
+
+    //    foreach (SpriteInfo enemy in enemyList)
+    //    {
+    //        if (enemy.transform.position.y < -6)
+    //        {
+    //            markedToDestroy.Add(enemy);
+    //        }
+    //    }
+    //}
+
+    /// <summary>
+    /// Called at end of frame to destroy
+    /// </summary>
+    public void DestroyList()
     {
-        if (enemy.RectMin.x < player.RectMax.x &&
-            enemy.RectMax.x > player.RectMin.x &&
-            enemy.RectMin.y < player.RectMax.y &&
-            enemy.RectMax.y > player.RectMin.y)
+        foreach (SpriteInfo toDestroy in markedToDestroy)
         {
-            Debug.Log("Collision detected");
-            return true;
+            if (attackList.Contains(toDestroy))
+            {
+                EraseAndDestroy(toDestroy, attackList);
+            }
+            else if (enemyList.Contains(toDestroy))
+            {
+                EraseAndDestroy(toDestroy, enemyList);
+            }
         }
-        return false;
+        markedToDestroy.Clear();
     }
 
-    public void SpawnEnemies()
+    /// <summary>
+    /// Called to destroy all colliding objects and remove them from their lists
+    /// </summary>
+    /// <param name="objectToDestroy"></param>
+    /// <param name="listToDeleteFrom"></param>
+    public void EraseAndDestroy(SpriteInfo objectToDestroy, List<SpriteInfo> listToDeleteFrom)
     {
-        enemiesKilled = 0;
-        enemiesToKill = currentRound + 1;
-
-        for (int j = 0; j < enemiesToKill; j++)
-        {
-            float newX = Random.Range(-screenWidth / 2, screenWidth / 2);
-            float newY = Random.Range(-screenHeight / 2, screenHeight / 2);
-            Vector2 newLoc = new Vector2(newX, newY);
-            enemyLocations.Add(newLoc);
-        }
-        for (int i = 0; i < enemyLocations.Count; i++)
-        {
-                enemySprites.Add(Instantiate(enemy, enemyLocations[i], Quaternion.identity));
-        }
+        listToDeleteFrom.Remove(objectToDestroy);
+        Destroy(objectToDestroy.gameObject);
     }
 
-    public void DestroyEnemy(int i)
+    /// <summary>
+    /// Called for game reset states
+    /// </summary>
+    public void ClearAll()
     {
-        Destroy(enemySprites[i].gameObject);
-        enemySprites.Remove(enemySprites[i]);
-        enemiesKilled++;
-    }
-
-    private void ResetGame()
-    {
-        for (int i = 0;i < enemySprites.Count; i++)
+        foreach (SpriteInfo enemyShip in enemyList)
         {
-            Destroy(enemySprites[i].gameObject);
-            enemySprites.Remove(enemySprites[i]);
+            markedToDestroy.Add(enemyShip);
         }
-
-        enemiesKilled = 0;
-        enemiesToKill = 0;
+        foreach (SpriteInfo playerBullet in attackList)
+        {
+            markedToDestroy.Add(playerBullet);
+        }
     }
 }
