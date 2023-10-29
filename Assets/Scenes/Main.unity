@@ -1513,7 +1513,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heart: {fileID: 0}
   heartsSpawned: []
+  startingHearts: 5
+  heartLocation: {x: 0, y: 0, z: 0}
   isDead: 0
+  collisionManager: {fileID: 0}
+  screenHeight: 0
+  screenWidth: 0
 --- !u!1 &1383006180
 GameObject:
   m_ObjectHideFlags: 0
