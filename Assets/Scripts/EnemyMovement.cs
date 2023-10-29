@@ -67,11 +67,22 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
     }
+    private void UpdateBounds()
+    {
+        cam = Camera.main;
+        camHeight = 2.0f * cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
+        camRight = camWidth/2;
+        camLeft = -camWidth/2;
+        camTop = camHeight/2;
+        camBottom = -camHeight/2;
+    }
 
     /*
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, player.transform.position);
-    }
-}
+    }*/
+  }
