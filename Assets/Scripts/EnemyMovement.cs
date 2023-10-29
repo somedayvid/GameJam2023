@@ -25,11 +25,6 @@ public class EnemyMovement : MonoBehaviour
         camHeight = 2.0f * cam.orthographicSize;
         camWidth = camHeight * cam.aspect;
 
-        camRight = camWidth/2;
-        camLeft = -camWidth/2;
-        camTop = camHeight/2;
-        camBottom = -camHeight/2;
-
         player = GameObject.FindWithTag("Player");
 
         animator = GetComponent<Animator>();
@@ -54,21 +49,29 @@ public class EnemyMovement : MonoBehaviour
 
     public void Spawn()
     {
+        UpdateBounds();
         int spawnPoint = Random.Range(0, 4);
         switch (spawnPoint)
         {
             case 0:
-                Instantiate(this, new Vector3(Random.Range(camLeft, camRight), Random.Range(camTop, camTop + 5), 0), Quaternion.identity);
+                Instantiate(this, new Vector3(Random.Range(camLeft, camRight), Random.Range(camTop, camTop + 5)), Quaternion.identity);
                 break;
             case 1:
-                Instantiate(this, new Vector3(Random.Range(camRight, camRight + 5), Random.Range(camBottom, camTop), 0), Quaternion.identity);
+                Instantiate(this, new Vector3(Random.Range(camRight, camRight + 5), Random.Range(camBottom, camTop)), Quaternion.identity);
                 break;
             case 2:
-                Instantiate(this, new Vector3(Random.Range(camLeft, camRight), Random.Range(camBottom - 5, camBottom), 0), Quaternion.identity);
+                Instantiate(this, new Vector3(Random.Range(camLeft, camRight), Random.Range(camBottom - 5, camBottom)), Quaternion.identity);
                 break;
             case 3:
-                Instantiate(this, new Vector3(Random.Range(camRight - 5, camRight), Random.Range(camBottom, camTop), 0), Quaternion.identity);
+                Instantiate(this, new Vector3(Random.Range(camLeft - 5, camLeft), Random.Range(camBottom, camTop)), Quaternion.identity);
                 break;
         }
+    }
+
+    /*
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, player.transform.position);
     }
 }

@@ -24,6 +24,11 @@ public class HealthManager : MonoBehaviour
         }
     }
 
+    public bool IsDead()
+    {
+        return health <= 0f;
+    }
+
     /// <summary>
     /// Damages the player by the given amount
     /// </summary>

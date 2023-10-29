@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementController: {fileID: 7008500697213456944}
   attacks: {fileID: 0}
+  isExploding: 0
 --- !u!114 &7008500697213456944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47fac26c65d321b4cbaf78547d050ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 7
   moveInput: {x: 0, y: 0}
 --- !u!114 &54835559937648589
 MonoBehaviour:

@@ -11,6 +11,8 @@ public class InputController : MonoBehaviour
     [SerializeField] Attacks attacks;
 
     public bool isExploding;
+    private float cooldownTime = .9f;
+    private bool isCooldown = false;
 
 
     private void Start()
@@ -38,7 +40,12 @@ public class InputController : MonoBehaviour
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Debug.Log("Your mouse position is: " + mousePosition);
-            attacks.AOEExplosion(onAim(), .7f);
+            if (!isCooldown)
+            {
+                attacks.AOEExplosion(onAim(), .65f);
+                StartCoroutine(Cooldown());
+            }
+
         };
 
     }
@@ -83,6 +90,11 @@ public class InputController : MonoBehaviour
         };
     }
 
-
+    private IEnumerator Cooldown()
+    {
+        isCooldown = true;
+        yield return new WaitForSeconds(cooldownTime);
+        isCooldown = false;
+    }
     
 }

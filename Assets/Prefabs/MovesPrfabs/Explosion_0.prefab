@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8378715260930715739}
   - component: {fileID: 1200318399599283035}
   - component: {fileID: 4623610623183245596}
-  - component: {fileID: 6150690371289253689}
   - component: {fileID: -4614834388459838032}
   m_Layer: 0
   m_Name: Explosion_0
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1200318399599283035
 SpriteRenderer:
@@ -108,28 +107,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6150690371289253689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2250151344252483842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 915dfaf9f8a7cdc44adff0f04f3d27c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frames:
-  - {fileID: -666660446, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: 1681236070, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: 284105517, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: -59488889, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: 84012454, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: -353697167, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: 2115525812, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  - {fileID: 1360498410, guid: 227c2c7ab2679ac4c990168d22bf8ea3, type: 3}
-  frameDuration: 5
 --- !u!114 &-4614834388459838032
 MonoBehaviour:
   m_ObjectHideFlags: 0
