@@ -7,17 +7,18 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] Image healthBar;
-    private float health = 100f;
+    private float health;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Temporary code to test heal
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
