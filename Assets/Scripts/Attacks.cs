@@ -15,6 +15,7 @@ public class Attacks : MonoBehaviour
     public GameObject shotPrefab;
 
     public GameObject explosionPrefab;
+    public GameObject bulletContainer;
 
 
     // Start is called before the first frame update
@@ -32,7 +33,7 @@ public class Attacks : MonoBehaviour
     public void FireShot(Vector2 targetPosition, float lifetime)
     {
         // Create a new shot object from the prefab
-        GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.identity);
+        GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.identity, bulletContainer.transform);
         shot.tag = "Shot";
         
         // Calculate the direction towards the target position (mouse)
@@ -66,7 +67,7 @@ public class Attacks : MonoBehaviour
 
     public void AOEExplosion(Vector2 targetPosistion, float lifeTime)
     {
-        GameObject aoe = Instantiate(explosionPrefab, targetPosistion, Quaternion.identity);
+        GameObject aoe = Instantiate(explosionPrefab, targetPosistion, Quaternion.identity, bulletContainer.transform);
         aoe.tag= "AOE";
 
 
