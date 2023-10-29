@@ -10,15 +10,13 @@ public class HealthManager : MonoBehaviour
     private float health;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        health = 100f;
-    }
+    void Start() { health = 100f; }
 
     // Update is called once per frame
     void Update()
     {
         // Temporary code to test heal
+        // Delete the entire update function when done
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
