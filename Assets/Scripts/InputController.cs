@@ -12,6 +12,12 @@ public class InputController : MonoBehaviour
 
     public bool isExploding;
 
+
+    private void Start()
+    {
+        attacks = GetComponent<Attacks>(); 
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -32,7 +38,7 @@ public class InputController : MonoBehaviour
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Debug.Log("Your mouse position is: " + mousePosition);
-            // Call the shoot method from the player based on mousePosition
+            attacks.AOEExplosion(onAim(), 1f);
         };
 
     }
@@ -58,13 +64,13 @@ public class InputController : MonoBehaviour
                 case "1":
                     Debug.Log("You pressed 1");
                     //OnAim for mouse posistion and then a lifetime
-                    attacks.FireShot(onAim(), 5f);
+                    //attacks.FireShot(onAim(), 5f);
 
                     
                     break;
                 case "2":
                     Debug.Log("You pressed 2");
-                    attacks.AOEExplosion(onAim(), 1f);
+                   // attacks.AOEExplosion(onAim(), 1f);
 
                     break;
                 case "3":
