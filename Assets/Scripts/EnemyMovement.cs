@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 direction;
     [SerializeField]
     private float velocity;
+    private SpriteRenderer spriteRenderer;
 
     Camera cam;
     float camHeight;
@@ -27,6 +28,8 @@ public class EnemyMovement : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         animator = GetComponent<Animator>();
     }
 
@@ -36,6 +39,12 @@ public class EnemyMovement : MonoBehaviour
         Vector3 thing = player.transform.position - transform.position;
         direction = thing.normalized;
         transform.position += direction * velocity * Time.deltaTime;
+
+        // Flip the sprite only if the current direction is different from the previous direction and not zero
+        if ((direction.x < 0f) != spriteRenderer.flipX && direction.x != 0f)
+        {
+            spriteRenderer.flipX = direction.x < 0f;
+        }
 
         if (velocity > 0)
         {
