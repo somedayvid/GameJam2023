@@ -30,6 +30,7 @@ public class Attacks : MonoBehaviour
         
     }
 
+    /*
     public void FireShot(Vector2 targetPosition, float lifetime)
     {
         // Create a new shot object from the prefab
@@ -62,7 +63,7 @@ public class Attacks : MonoBehaviour
             yield return null;
         }
     }
-
+    */
 
 
     public void AOEExplosion(Vector2 targetPosistion, float lifeTime)

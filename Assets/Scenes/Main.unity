@@ -341,6 +341,149 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &788685581
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 655937782704364420, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 788685582}
+    - target: {fileID: 4397468295700125047, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: velocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_Name
+      value: Polar Bear Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+--- !u!212 &788685582 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+  m_PrefabInstance: {fileID: 788685581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &842592628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 655937782704364420, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 1880374668}
+    - target: {fileID: 4397468295700125047, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: velocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_Name
+      value: Polar Bear Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750123863809702908, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
 --- !u!1 &876323516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6601,6 +6744,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1880374668 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3161961160765209867, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+  m_PrefabInstance: {fileID: 842592628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4245161725952761392
 PrefabInstance:
   m_ObjectHideFlags: 0
