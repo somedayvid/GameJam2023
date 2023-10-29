@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 direction;
     [SerializeField]
     private float velocity;
+    public Animator animator;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -20,6 +21,11 @@ public class EnemyMovement : MonoBehaviour
         Vector3 thing = player.transform.position - transform.position;
         direction = thing.normalized;
         transform.position += direction * velocity * Time.deltaTime;
+
+    }
+
+    private void AnimateMove()
+    {
 
     }
 
