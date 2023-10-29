@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class NarwhalMovement : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class NarwhalMovement : MonoBehaviour
     void Update()
     {
         transform.position += direction * velocity * Time.deltaTime;
+        Die();
     }
 
     public void Spawn()
@@ -52,6 +54,15 @@ public class NarwhalMovement : MonoBehaviour
         else if(spawnSide == 1)
         {
             Instantiate(this, new Vector3(Random.Range(camLeft - 5, camLeft - 10), Random.Range(camBottom, camTop)), Quaternion.identity);
+        }
+    }
+
+    public void Die()
+    {
+        UpdateBounds();
+        if(transform.position.x > camRight + 10 || transform.position.x < camLeft - 10)
+        {
+            Destroy(gameObject);
         }
     }
 

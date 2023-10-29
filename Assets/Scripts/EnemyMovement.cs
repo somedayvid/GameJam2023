@@ -56,7 +56,7 @@ public class EnemyMovement : MonoBehaviour
                 Instantiate(this, new Vector3(Random.Range(camLeft, camRight), Random.Range(camBottom - 5, camBottom)), Quaternion.identity);
                 break;
             case 3:
-                Instantiate(this, new Vector3(Random.Range(camRight - 5, camRight), Random.Range(camBottom, camTop)), Quaternion.identity);
+                Instantiate(this, new Vector3(Random.Range(camLeft - 5, camLeft), Random.Range(camBottom, camTop)), Quaternion.identity);
                 break;
         }
     }
