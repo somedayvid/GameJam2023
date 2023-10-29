@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img src="[[Assets/Images/logo.png](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png)](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png)" alt="Penguin With a Hat Logo" width="200"></a>
+  <a href="https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png"><img src="https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png" width="200"></a>
   <br>
   Penguin With a Hat
   <br>
