@@ -73,6 +73,7 @@ public class Attacks : MonoBehaviour
 
 
         Destroy(aoe, lifeTime);
+
     }
 
     public void Freeze()
