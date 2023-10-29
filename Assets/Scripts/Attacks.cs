@@ -33,7 +33,7 @@ public class Attacks : MonoBehaviour
     public void FireShot(Vector2 targetPosition, float lifetime)
     {
         // Create a new shot object from the prefab
-        GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.identity, bulletContainer.transform);
+        GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.identity);
         shot.tag = "Shot";
         
         // Calculate the direction towards the target position (mouse)
@@ -67,7 +67,7 @@ public class Attacks : MonoBehaviour
 
     public void AOEExplosion(Vector2 targetPosistion, float lifeTime)
     {
-        GameObject aoe = Instantiate(explosionPrefab, targetPosistion, Quaternion.identity, bulletContainer.transform);
+        GameObject aoe = Instantiate(explosionPrefab, targetPosistion, Quaternion.identity);
         aoe.tag= "AOE";
 
 

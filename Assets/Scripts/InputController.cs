@@ -65,7 +65,6 @@ public class InputController : MonoBehaviour
                 case "2":
                     Debug.Log("You pressed 2");
                     attacks.AOEExplosion(onAim(), 1f);
-                    isExploding = true;
 
                     break;
                 case "3":
