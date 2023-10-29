@@ -21,11 +21,13 @@ public class HealthManager : MonoBehaviour
 
         if (UnityEngine.InputSystem.Keyboard.current.oKey.wasPressedThisFrame)
         {
-            DamagePlayer(5f);
+            Debug.Log("O was pressed");
+            DamagePlayer(10f);
         }
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
-            HealPlayer(5f);
+            Debug.Log("P was pressed");
+            HealPlayer(10f);
         }
     }
 
