@@ -1809,6 +1809,10 @@ PrefabInstance:
       propertyPath: renderer
       value: 
       objectReference: {fileID: 1098452895}
+    - target: {fileID: 4397468295700125047, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
+      propertyPath: velocity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5117282331108445656, guid: e492516e49f542b4eba0050cea9e3799, type: 3}
       propertyPath: m_Name
       value: Polar Bear Enemy
