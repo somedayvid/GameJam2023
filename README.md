@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img src="" alt="Penguin With a Hat" width="200"></a>
+  <a href=""><img src="Assets/Images/logo.png" alt="Penguin With a Hat" width="200"></a>
   <br>
   Penguin With a Hat
   <br>
