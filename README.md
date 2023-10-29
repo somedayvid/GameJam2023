@@ -30,7 +30,7 @@ The hat is the underlying source of your arcane prowess to which you vanquish ev
 
 ## Download
 
-You can download it on itch.
+You can play and download the game on our [itch.io page](https://somedayvid.itch.io/penguin-with-a-hat)
 
 ## License
 
