@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 direction;
     [SerializeField]
     private float velocity;
-    public Animator animator;
 
     Camera cam;
     float camHeight;
@@ -17,6 +16,9 @@ public class EnemyMovement : MonoBehaviour
     float camLeft;
     float camTop;
     float camBottom;
+
+    private Animator animator;
+
     void Start()
     {
         cam = Camera.main;
@@ -29,6 +31,8 @@ public class EnemyMovement : MonoBehaviour
         camBottom = -camHeight/2;
 
         player = GameObject.FindWithTag("Player");
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,11 +42,14 @@ public class EnemyMovement : MonoBehaviour
         direction = thing.normalized;
         transform.position += direction * velocity * Time.deltaTime;
 
-    }
-
-    private void AnimateMove()
-    {
-
+        if (velocity > 0)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
     }
 
     public void Spawn()
@@ -64,12 +71,4 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
     }
-
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, player.transform.position);
-    }
-    */
 }
