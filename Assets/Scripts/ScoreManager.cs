@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoundManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    private float round;
-
-    public float Round { get { return round; } }
+    private HealthManager healthManager;
+    private float score;
 
     // Start is called before the first frame update
     void Start()
     {
-        round = 0;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -20,9 +19,8 @@ public class RoundManager : MonoBehaviour
         
     }
 
-    public void NextRound()
+    public void EnemyKilled(float points)
     {
-        round++;
-        // Spawn enemies / other round related stuff
+        score += points;
     }
 }
