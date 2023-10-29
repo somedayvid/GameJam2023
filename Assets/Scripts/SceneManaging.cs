@@ -13,10 +13,10 @@ public class SceneManaging : MonoBehaviour
     }
     void Update()
     {
-        if (healthManagement.isDead)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
+        //if (healthManagement.isDead)
+        //{
+        //    SceneManager.LoadScene("GameOver");
+        //}
     }
 
     /// <summary>
