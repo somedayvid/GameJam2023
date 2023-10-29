@@ -10,13 +10,13 @@ public class NarwhalMovement : MonoBehaviour
     private float velocity;
     private SpriteRenderer spriteRenderer;
         
-    Camera cam;
-    float camHeight;
-    float camWidth;
-    float camRight;
-    float camLeft;
-    float camTop;
-    float camBottom;
+    private Camera cam;
+    private float camHeight;
+    private float camWidth;
+    private float camRight;
+    private float camLeft;
+    private float camTop;
+    private float camBottom;
     void Start()
     {
         cam = Camera.main;
@@ -51,11 +51,11 @@ public class NarwhalMovement : MonoBehaviour
         int spawnSide = Random.Range(0, 2);
         if (spawnSide == 0)
         {
-            Instantiate(this, new Vector3(Random.Range(camRight, camRight + 5), Random.Range(camBottom, camTop), 0), Quaternion.identity);
+            Instantiate(this, new Vector3(Random.Range(8, 13), Random.Range(camBottom, camTop)), Quaternion.identity);
         }
         else if(spawnSide == 1)
         {
-            Instantiate(this, new Vector3(Random.Range(camLeft, camLeft - 5), Random.Range(camBottom, camTop), 0), Quaternion.identity);
+            Instantiate(this, new Vector3(Random.Range(-8, -13), Random.Range(camBottom, camTop)), Quaternion.identity);
         }
     }
 }
