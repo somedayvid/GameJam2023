@@ -5,20 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneManaging : MonoBehaviour
 {
-    private HealthManagement healthManagement;
-
-    void Start()
-    {
-        healthManagement = GetComponent<HealthManagement>(); 
-    }
-    void Update()
-    {
-        //if (healthManagement.isDead)
-        //{
-        //    SceneManager.LoadScene("GameOver");
-        //}
-    }
-
     /// <summary>
     /// Load the instructions scene
     /// </summary>
@@ -51,10 +37,7 @@ public class SceneManaging : MonoBehaviour
     public void LoadGameOver()
     {
         try {
-            if (healthManagement.Died)
-            {
-                SceneManager.LoadScene("GameOver");
-            }
+            SceneManager.LoadScene("GameOver");
         }
         catch (System.Exception error) {
             throw new System.Exception(error.Message);
