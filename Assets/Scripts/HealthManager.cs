@@ -53,7 +53,7 @@ public class HealthManager : MonoBehaviour
     /// </summary>
     /// <param name="damage">The amount to be damaged</param>
     /// <param name="duration">The duration of animation</param>
-    /// <returns></returns>
+    /// <returns>Nothing but the completed action</returns>
     IEnumerator DamageHealthOverTime(float damage, float duration)
     {
         float elapsedTime = 0f;
@@ -73,7 +73,7 @@ public class HealthManager : MonoBehaviour
     /// </summary>
     /// <param name="healAmount">The amount to be healed</param>
     /// <param name="duration">The duration of animation</param>
-    /// <returns></returns>
+    /// <returns>Nothing but the completed action</returns>
     IEnumerator HealHealthOverTime(float healAmount, float duration)
     {
         float elapsedTime = 0f;
