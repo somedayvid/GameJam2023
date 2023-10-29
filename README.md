@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href=""><img src="[Assets/Images/logo.png](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png)" alt="Penguin With a Hat Logo" width="200"></a>
+  <a href=""><img src="[[Assets/Images/logo.png](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png)](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Logo.png)" alt="Penguin With a Hat Logo" width="200"></a>
   <br>
   Penguin With a Hat
   <br>
@@ -20,16 +20,15 @@
 
 ## Description
 
-reciate it!
+A survival....
 
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
+* Man how would I know, sobs
 
 ## Download
 
-You can download on itch.
+You can download it on itch.
 
 ## License
 
