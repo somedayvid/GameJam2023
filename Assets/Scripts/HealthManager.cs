@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
+    // Variable field
     [SerializeField] Image healthBar;
     private float health;
 
@@ -24,16 +25,19 @@ public class HealthManager : MonoBehaviour
             HealPlayer(10f, 1f);
         }
 
-        if (health <= 0)
+        CheckHealth();  
+    }
+
+    /// <summary>
+    /// Checks the health of the player
+    /// </summary>
+    public void CheckHealth()
+    {
+        if (health <= 0f)
         {
             SceneManager.LoadScene("GameOver");
         }
-        
-    }
-
-    public bool IsDead()
-    {
-        return health <= 0f;
+        // Maybe when 50% health, add in a red tint to the screen?
     }
 
     /// <summary>
