@@ -5,22 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CollisionManager : MonoBehaviour
 {
-    public GameObject attackContainer;
-
-    public GameObject enemyContainer;
-
-    public SpriteInfo player;
-
-    public List<SpriteInfo> attackList = new List<SpriteInfo>();
-
-    public List<SpriteInfo> enemyList = new List<SpriteInfo>();
-
-    private List<SpriteInfo> markedToDestroy = new List<SpriteInfo>();
+    HealthManager healthManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthManager = GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -74,7 +64,7 @@ public class CollisionManager : MonoBehaviour
                 {
                     // Destroy both enemy and bullet upon collision
                     Destroy(enemy);
-
+                    healthManager.DamagePlayer(10f);
                 }
             }
         }

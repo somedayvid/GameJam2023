@@ -18,12 +18,6 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (UnityEngine.InputSystem.Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            Debug.Log("O was pressed");
-            DamagePlayer(10f);
-        }
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
