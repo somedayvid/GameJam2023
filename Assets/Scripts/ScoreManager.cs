@@ -18,8 +18,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textPrefab.sortingOrder = 10;
-        textPrefab.text = "Score: " + score;
+        textPrefab.text = score.ToString();
     }
 
     public void EnemyKilled(float points)
