@@ -10,15 +10,13 @@ public class HealthManager : MonoBehaviour
     private float health;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        health = 100f;
-    }
+    void Start() { health = 100f; }
 
     // Update is called once per frame
     void Update()
     {
         // Temporary code to test heal
+        // Delete the entire update function when done
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
@@ -53,7 +51,7 @@ public class HealthManager : MonoBehaviour
     /// </summary>
     /// <param name="damage">The amount to be damaged</param>
     /// <param name="duration">The duration of animation</param>
-    /// <returns></returns>
+    /// <returns>Nothing but the completed action</returns>
     IEnumerator DamageHealthOverTime(float damage, float duration)
     {
         float elapsedTime = 0f;
@@ -73,7 +71,7 @@ public class HealthManager : MonoBehaviour
     /// </summary>
     /// <param name="healAmount">The amount to be healed</param>
     /// <param name="duration">The duration of animation</param>
-    /// <returns></returns>
+    /// <returns>Nothing but the completed action</returns>
     IEnumerator HealHealthOverTime(float healAmount, float duration)
     {
         float elapsedTime = 0f;

@@ -64,7 +64,7 @@ public class CollisionManager : MonoBehaviour
                 {
                     // Destroy both enemy and bullet upon collision
                     Destroy(enemy);
-                    healthManager.DamagePlayer(10f, 2f);
+                    healthManager.DamagePlayer(10f, .5f);
                 }
             }
         }
