@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="#description">Description</a> •
-  <a href="#key-features">Key Features</a> •
+  <a href="#features">Features</a> •
   <a href="#download">Download</a> •
   <a href="#license">License</a>
 </p>
@@ -22,8 +22,9 @@
 
 The hat is the underlying source of your arcane prowess to which you vanquish evil and bring light to the Arctic. The ever-vicious narwhal will try and sweep by taking the hat with it while the polar bears will chase you down from every corner of the world.
 
-## Key Features
+## Features
 
+* Health bar
 * Sliding narwhals
 * Scooting polar bears
 
