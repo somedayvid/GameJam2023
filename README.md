@@ -20,7 +20,7 @@
 
 ## Description
 
-A survival....
+The hat is the underlying source of your arcane prowess to which you vanquish evil and bring light to the Arctic. The ever vicious narwhal will try and sweep by taking the hat with it while the polar bears will chase you down from every corner of the world.
 
 ## Key Features
 
