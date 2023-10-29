@@ -22,47 +22,66 @@ public class HealthManager : MonoBehaviour
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
-            HealPlayer(10f);
+            HealPlayer(10f, 1f);
         }
     }
 
     /// <summary>
     /// Damages the player by the given amount
     /// </summary>
-    /// <param name="damage"></param>
+    /// <param name="damage">The amount to deal</param>
+    /// <param name="duration">The time</param>
     public void DamagePlayer(float damage, float duration)
     {
-        StartCoroutine(HealthOverTime(damage, duration));
+        StartCoroutine(DamageHealthOverTime(damage, duration));
         health = Mathf.Clamp(health, 0, 100);
     }
 
     /// <summary>
     /// Heals the player by the given amount
     /// </summary>
-    /// <param name="heal"></param>
-    public void HealPlayer(float heal)
+    /// <param name="heal">The amount to heal</param>
+    /// <param name="duration">The time</param>
+    public void HealPlayer(float heal, float duration)
     {
-/*        health += heal;
-        health = Mathf.Clamp(health, 0, 100);
-
-        healthBar.fillAmount = health / 100f;*/
-        StartCoroutine(HealthOverTime(heal, 1f));
+        StartCoroutine(HealHealthOverTime(heal, duration));
         health = Mathf.Clamp(health, 0, 100);
     }
 
     /// <summary>
-    /// 
+    /// Decreases the health of the player by the given amount over the given duration
     /// </summary>
-    /// <param name="damage"></param>
-    /// <param name="duration"></param>
+    /// <param name="damage">The amount to be damaged</param>
+    /// <param name="duration">The duration of animation</param>
     /// <returns></returns>
-    IEnumerator HealthOverTime(float damage, float duration)
+    IEnumerator DamageHealthOverTime(float damage, float duration)
     {
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
         {
             health -= damage * Time.deltaTime / duration;
+            healthBar.fillAmount = health / 100f;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    /// <summary>
+    /// Increases the health of the player by the given amount over the given duration
+    /// </summary>
+    /// <param name="healAmount">The amount to be healed</param>
+    /// <param name="duration">The duration of animation</param>
+    /// <returns></returns>
+    IEnumerator HealHealthOverTime(float healAmount, float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            health += healAmount * Time.deltaTime / duration;
+            health = Mathf.Clamp(health, 0f, 100f);
             healthBar.fillAmount = health / 100f;
 
             elapsedTime += Time.deltaTime;
