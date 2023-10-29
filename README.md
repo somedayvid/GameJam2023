@@ -7,11 +7,11 @@
   <br>
 </h1>
 
-<h4 align="center">A basic survival game made during a game jam.</h4>
+<h4 align="center">A basic survival game made during a 45h game jam.</h4>
 
 <p align="center">
   <a href="#description">Description</a> •
-  <a href="#key-features">Key Features</a> •
+  <a href="#features">Features</a> •
   <a href="#download">Download</a> •
   <a href="#license">License</a>
 </p>
@@ -20,11 +20,13 @@
 
 ## Description
 
-The hat is the underlying source of your arcane prowess to which you vanquish evil and bring light to the Arctic. The ever vicious narwhal will try and sweep by taking the hat with it while the polar bears will chase you down from every corner of the world.
+The hat is the underlying source of your arcane prowess to which you vanquish evil and bring light to the Arctic. The ever-vicious narwhal will try and sweep by taking the hat with it while the polar bears will chase you down from every corner of the world.
 
-## Key Features
+## Features
 
-* Man how would I know, sobs
+* Health bar
+* Sliding narwhals
+* Scooting polar bears
 
 ## Download
 
