@@ -38,7 +38,7 @@ public class InputController : MonoBehaviour
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Debug.Log("Your mouse position is: " + mousePosition);
-            attacks.AOEExplosion(onAim(), 1f);
+            attacks.AOEExplosion(onAim(), .7f);
         };
 
     }
