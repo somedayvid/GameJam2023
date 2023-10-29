@@ -7,23 +7,18 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField] Image healthBar;
-    private float health = 100f;
+    private float health;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = 100f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (UnityEngine.InputSystem.Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            Debug.Log("O was pressed");
-            DamagePlayer(10f);
-        }
+        // Temporary code to test heal
         if (UnityEngine.InputSystem.Keyboard.current.pKey.wasPressedThisFrame)
         {
             Debug.Log("P was pressed");
@@ -37,8 +32,9 @@ public class HealthManager : MonoBehaviour
     /// <param name="damage"></param>
     public void DamagePlayer(float damage)
     {
-        health -= damage;
-        healthBar.fillAmount = health / 100f;
+        // health -= damage;
+        // healthBar.fillAmount = health / 100f;
+        StartCoroutine(DecreaseHealthOverTime(damage, 2f));
     }
 
     /// <summary>
@@ -51,5 +47,25 @@ public class HealthManager : MonoBehaviour
         health = Mathf.Clamp(health, 0, 100);
 
         healthBar.fillAmount = health / 100f;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="damage"></param>
+    /// <param name="duration"></param>
+    /// <returns></returns>
+    IEnumerator DecreaseHealthOverTime(float damage, float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            health -= damage * Time.deltaTime / duration;
+            healthBar.fillAmount = health / 100f;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 }
