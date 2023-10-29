@@ -37,6 +37,7 @@ public class SceneManaging : MonoBehaviour
     public void LoadGameOver()
     {
         try {
+            
             SceneManager.LoadScene("GameOver");
         }
         catch (System.Exception error) {
