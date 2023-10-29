@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class CollisionManager : MonoBehaviour
 {
     HealthManager healthManager;
+    ScoreManager scoreManager;
 
     // Start is called before the first frame update
     void Start()
     {
         healthManager = GetComponent<HealthManager>();
+        scoreManager = GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -71,12 +73,17 @@ public class CollisionManager : MonoBehaviour
        
     }
 
+    /// <summary>
+    /// Uses AABB collision to check if two sprites are colliding
+    /// </summary>
+    /// <param name="player">The first sprite</param>
+    /// <param name="enemy">The second sprite</param>
+    /// <returns>True if they collide</returns>
     public bool CheckCollision(SpriteInfo player, SpriteInfo enemy)
     {
         if (enemy.RectMin.x < player.RectMax.x && enemy.RectMax.x > player.RectMin.x &&
             enemy.RectMin.y < player.RectMax.y && enemy.RectMax.y > player.RectMin.y)
         {
-            Debug.Log("Collision detected");
             return true;
         }
         return false;
