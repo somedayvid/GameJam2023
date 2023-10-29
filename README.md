@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">A basic survival game made during a game jam.</h4>
+<h4 align="center">A basic survival game made during a 45h game jam.</h4>
 
 <p align="center">
   <a href="#description">Description</a> •
