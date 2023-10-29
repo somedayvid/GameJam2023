@@ -6,11 +6,13 @@ using UnityEngine.InputSystem;
 public class AnimateHUDPenguin : MonoBehaviour
 {
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -27,5 +29,25 @@ public class AnimateHUDPenguin : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
+
+        
+        if (UnityEngine.InputSystem.Keyboard.current.aKey.isPressed)
+        {
+            spriteRenderer.flipX = true;
+        }
+        /*
+        else if (UnityEngine.InputSystem.Keyboard.current.dKey.isPressed)
+        {
+            spriteRenderer.flipX = false;
+        }
+        */
+        
+        /*
+        // Flip the sprite only if the current direction is different from the previous direction and not zero
+        if ((direction < 0f) != spriteRenderer.flipX && direction != 0f)
+        {
+            spriteRenderer.flipX = direction < 0f;
+        }
+        */
     }
 }
