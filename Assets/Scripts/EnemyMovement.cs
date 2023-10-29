@@ -6,16 +6,19 @@ public class EnemyMovement : MonoBehaviour
 {
     private GameObject player;
     private Vector3 direction;
-    [SerializeField] float velocity;
-    public Animator animator;
+    [SerializeField]
+    private float velocity;
 
-    private Camera cam;
-    private float camHeight;
-    private float camWidth;
-    private float camRight;
-    private float camLeft;
-    private float camTop;
-    private float camBottom;
+    Camera cam;
+    float camHeight;
+    float camWidth;
+    float camRight;
+    float camLeft;
+    float camTop;
+    float camBottom;
+
+    private Animator animator;
+
     void Start()
     {
         cam = Camera.main;
@@ -23,6 +26,8 @@ public class EnemyMovement : MonoBehaviour
         camWidth = camHeight * cam.aspect;
 
         player = GameObject.FindWithTag("Player");
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,11 +37,16 @@ public class EnemyMovement : MonoBehaviour
         direction = thing.normalized;
         transform.position += direction * velocity * Time.deltaTime;
 
+        if (velocity > 0)
+        {
+            animator.SetBool("IsMoving", true);
+        }
+        else
+        {
+            animator.SetBool("IsMoving", false);
+        }
     }
 
-    /// <summary>
-    /// Spawns the enemy at a random location
-    /// </summary>
     public void Spawn()
     {
         UpdateBounds();
@@ -58,18 +68,10 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Updates the bounds of the camera
-    /// </summary>
-    private void UpdateBounds()
+    /*
+    private void OnDrawGizmos()
     {
-        cam = Camera.main;
-        camHeight = 2.0f * cam.orthographicSize;
-        camWidth = camHeight * cam.aspect;
-
-        camRight = camWidth / 2;
-        camLeft = -camWidth / 2;
-        camTop = camHeight / 2;
-        camBottom = -camHeight / 2;
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, player.transform.position);
     }
 }
