@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthManagement : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class HealthManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = heartsSpawned.Count - 1;i >= 0;i--)
+        for (int i = heartsSpawned.Count - 1; i >= 0; i--)
         {
             //if (collisionManager.Colliding)
             //{
