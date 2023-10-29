@@ -6,8 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private GameObject player;
     private Vector3 direction;
-    [SerializeField]
-    private float velocity;
+    [SerializeField] float velocity;
     public Animator animator;
 
     private Camera cam;
@@ -35,11 +34,9 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    private void AnimateMove()
-    {
-
-    }
-
+    /// <summary>
+    /// Spawns the enemy at a random location
+    /// </summary>
     public void Spawn()
     {
         UpdateBounds();
@@ -61,23 +58,18 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the bounds of the camera
+    /// </summary>
     private void UpdateBounds()
     {
         cam = Camera.main;
         camHeight = 2.0f * cam.orthographicSize;
         camWidth = camHeight * cam.aspect;
 
-        camRight = camWidth/2;
-        camLeft = -camWidth/2;
-        camTop = camHeight/2;
-        camBottom = -camHeight/2;
+        camRight = camWidth / 2;
+        camLeft = -camWidth / 2;
+        camTop = camHeight / 2;
+        camBottom = -camHeight / 2;
     }
-
-    /*
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, player.transform.position);
-    }
-    */
 }
