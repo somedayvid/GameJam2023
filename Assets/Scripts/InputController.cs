@@ -42,7 +42,7 @@ public class InputController : MonoBehaviour
             Debug.Log("Your mouse position is: " + mousePosition);
             if (!isCooldown)
             {
-                attacks.AOEExplosion(onAim(), .6f);
+                attacks.AOEExplosion(onAim(), .55f);
                 StartCoroutine(Cooldown());
             }
 
