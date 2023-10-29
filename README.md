@@ -16,7 +16,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot]()
+![screenshot](https://github.com/somedayvid/GameJam2023/blob/main/Assets/Images/Instructions.png)
 
 ## Description
 
