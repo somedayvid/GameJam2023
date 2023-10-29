@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class HealthManager : MonoBehaviour
             Debug.Log("P was pressed");
             HealPlayer(10f, 1f);
         }
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        
     }
 
     public bool IsDead()
