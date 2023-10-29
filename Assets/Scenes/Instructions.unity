@@ -666,7 +666,7 @@ MonoBehaviour:
 
     Movement - W,A,S,D
 
-    Abilities - 1,2,3,4'
+    Ability - Left Click'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d8b18f0f37410db4097627ade22a192a, type: 2}
   m_sharedMaterial: {fileID: 6114320146351317895, guid: d8b18f0f37410db4097627ade22a192a, type: 2}
