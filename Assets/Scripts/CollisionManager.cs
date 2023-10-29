@@ -51,9 +51,11 @@ public class CollisionManager : MonoBehaviour
 
                 if (CheckCollision(enemySprite, explosionSprite))
                 {
-                    // Destroy both enemy and bullet upon collision
+                    // Destroy both enemy
                     Destroy(enemy);
 
+                    //Change number to set score gain
+                    scoreManager.EnemyKilled(10);
                 }
             }
 
@@ -66,6 +68,11 @@ public class CollisionManager : MonoBehaviour
                 {
                     // Destroy both enemy and bullet upon collision
                     Destroy(enemy);
+
+                    //Change number to set score gain
+                    //Reenable if you want player to gain a score on collision
+                    //scoreManager.EnemyKilled(10);
+
                     healthManager.DamagePlayer(10f, .5f);
                 }
             }
