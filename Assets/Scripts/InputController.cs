@@ -11,7 +11,7 @@ public class InputController : MonoBehaviour
     [SerializeField] Attacks attacks;
 
     public bool isExploding;
-    private float cooldownTime = .9f;
+    private float cooldownTime = .75f;
     private bool isCooldown = false;
 
 
@@ -42,7 +42,7 @@ public class InputController : MonoBehaviour
             Debug.Log("Your mouse position is: " + mousePosition);
             if (!isCooldown)
             {
-                attacks.AOEExplosion(onAim(), .65f);
+                attacks.AOEExplosion(onAim(), .55f);
                 StartCoroutine(Cooldown());
             }
 
