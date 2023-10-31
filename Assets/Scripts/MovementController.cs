@@ -80,32 +80,4 @@ public class MovementController : MonoBehaviour
             }
         }
     }
-
-    /*
-
-    public void FixedUpdate()
-    {
-        if (moveInput != Vector2.zero)
-        {
-            bool success = MovePlayer(moveInput);
-        }
-    }
-
-    public void DidMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-
-        if (moveInput != Vector2.zero)
-        {
-            animator.SetFloat("XInput", moveInput.x);
-            animator.SetFloat("YInput", moveInput.y);
-        }
-    }
-
-    public bool MovePlayer()
-    {
-        int count = rb.Cast(
-            )
-    }
-    */
 }
